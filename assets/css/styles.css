@@ -78,10 +78,14 @@ div#logo img {
 }
 
 div#chat-btn {
-    color: var(--red-very-light);
     border: 1px solid var(--red-very-light);
     border-radius: 2px;
     padding: 7px 10px;
+}
+
+div#chat-btn a {
+    text-decoration: none;
+    color: var(--red-very-light);
     font-weight: bolder;
     font-size: 15px;
     text-transform: uppercase;
