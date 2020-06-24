@@ -22,8 +22,8 @@
 
 
 
-    --dark: black;
-    --dark-light: #1a1a1d;
+    /* --dark: black;
+    --dark-light: #1a1a1d; */
 }
 
 html {
@@ -58,14 +58,14 @@ div#container {
 /* HEADER */
 
 div#header {
-    background-color: var(--dark);
+    background-color: var(--dark-light);
     width: 100%;
     height: var(--header-height);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    /* box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); */
     /* z-index: 99; */
     position: relative;
 }
@@ -100,6 +100,10 @@ div#menu-mobile i {
     color: var(--light);
     margin-right: 20px;
     margin-left: 20px;
+}
+
+div#menu {
+    display: none;
 }
 
 /* BANNER */
@@ -430,15 +434,22 @@ p {
     font-weight: 600;
 }
 
-@media (min-width:700px) {
+@media (min-width:1000px) {
     div#container {
         /* background-color: black; */
     }
 
     /* HEADER */
-    div#header {
+    div#header-wrap {
         background-color: var(--dark-light);
-        max-width: 1250px;
+        /* border-top: solid 1px var(--red-very-light); */
+        border-bottom: solid 1px var(--red-very-light);
+
+    }
+
+    div#header {
+        /* background-color: var(--dark-light); */
+        max-width: 1200px;
         margin: 0 auto;
     }
 
@@ -450,7 +461,41 @@ p {
         margin-right: 20px;
     }
 
+    div#menu {
+        display: flex;
+        margin-right: 20px;
+        height: 65px;
+        /* flex-direction: row; */
+        /* justify-content: center; */
+        /* align-items: center; */
+    }
+
+    div#menu a {
+        text-decoration: none;
+        color: var(--light);
+        height: 100%;
+        /* background-color: var(--dark); */
+        /* margin: 0 10px; */
+        /* height: 100%; */
+        width: 80px;
+        line-height: 65px;
+        /* padding: 0 20px; */
+        box-sizing: border-box;
+        text-align: center;
+        /* text-transform: uppercase; */
+        /* border: solid 1px black; */
+        transition: all 0.3s;
+    }
+
+    div#menu a:hover {
+        background-color: var(--red-light);
+    }
+
     /* BANNER */
+
+    div#banner-wrap {
+        background-color: var(--dark);
+    }
 
     div#banner {
         height: 100vh;
@@ -459,8 +504,8 @@ p {
         justify-content: space-around;
         align-items: center;
         width: 100%;
-        background-color: black;
-        max-width: 1250px;
+        /* background-color: black; */
+        max-width: 1200px;
         margin: 0 auto;
     }
 
@@ -485,15 +530,37 @@ p {
 
     div#banner-text {
         width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 100px;
+    }
+
+    div#banner-text .text1 {
+        font-size: 50px;
+    }
+
+    div#banner-text .text2 {
+        font-size: 67px;
+        width: 80%;
+        /* font-weight: 500; */
+    }
+
+    div#banner-text .text3 {
+        font-size: 30px;
     }
 
     /* ABOUT */
+    div#about-wrap {
+        background-color: var(--dark-light);
+    }
+
     div#about {
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        max-width: 1250px;
+        max-width: 1200px;
         margin: 0 auto;
     }
 
@@ -508,9 +575,13 @@ p {
     }
 
     /* SKILLS */
+    div#skills-wrap {
+        background-color: var(--dark);
+    }
+
     div#skills {
         height: 100vh;
-        max-width: 1250px;
+        max-width: 1200px;
         margin: 0 auto;
     }
 
@@ -528,9 +599,13 @@ p {
     }
 
     /* PROJECTS */
+    div#projects-wrap {
+        background-color: var(--dark-light);
+    }
+
     div#projects {
         height: 100vh;
-        max-width: 1250px;
+        max-width: 1200px;
         margin: 0 auto;
     }
 
@@ -543,9 +618,13 @@ p {
     }
 
     /* CONTACT */
+    div#contact-wrap {
+        background-color: var(--dark);
+    }
+
     div#contact {
         height: 100vh;
-        max-width: 1250px;
+        max-width: 1200px;
         margin: 0 auto;
     }
 
@@ -561,10 +640,15 @@ p {
     }
 
     /* FOOTER */
+    div#footer-wrap {
+        background-color: var(--dark-light);
+        border-top: solid var(--red-very-light) 1px;
+    }
 
     div#footer {
-        max-width: 1250px;
+        max-width: 1200px;
         margin: 0 auto;
+        border: none;
     }
 }
 
