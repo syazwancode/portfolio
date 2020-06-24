@@ -56,6 +56,11 @@ div#container {
 }
 
 /* HEADER */
+div#header-wrap {
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+}
 
 div#header {
     background-color: var(--dark-light);
@@ -66,8 +71,9 @@ div#header {
     justify-content: space-between;
     align-items: center;
     /* box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); */
-    /* z-index: 99; */
     position: relative;
+    /* position: fixed;
+    width: 100vw; */
 }
 
 div#btn-and-menu {
@@ -111,6 +117,7 @@ div#banner {
     background-color: var(--dark);
     width: 100%;
     height: calc(100vh - var(--header-height));
+    padding-top: var(--header-height);
 }
 
 div#banner-outer-img {
@@ -143,6 +150,7 @@ div#about {
     background-color: var(--dark-light);
     width: 100%;
     padding-bottom: 50px;
+    padding-top: var(--header-height);
 }
 
 div#about-img {
@@ -218,10 +226,12 @@ div#about-me p:nth-child(3) {
 div#skills {
     background-color: var(--dark);
     padding: 40px 0 40px 0;
+    padding-top: var(--header-height);
 }
 
 div#skills-text {
     margin: 0 25px 0 25px;
+    padding-top: 20px;
 }
 
 div#skills-text p:nth-child(1) {
@@ -270,10 +280,12 @@ img.skills-logo {
 div#projects {
     background-color: var(--dark-light);
     padding: 40px 0 10px 0;
+    padding-top: var(--header-height);
 }
 
 div#projects-text {
     margin: 0 25px 0 25px;
+    padding-top: 20px;
 }
 
 div#projects-text p {
@@ -328,6 +340,8 @@ div.prjc-desc {
 div#contact {
     background-color: var(--dark);
     padding: 0 0 40px 0;
+    padding-top: var(--header-height);
+
 }
 
 div#contact-text {
@@ -484,7 +498,7 @@ p {
         text-align: center;
         /* text-transform: uppercase; */
         /* border: solid 1px black; */
-        transition: all 0.3s;
+        /* transition: all 0.3s; */
     }
 
     div#menu a:hover {
