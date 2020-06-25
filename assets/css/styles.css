@@ -463,13 +463,10 @@ p {
     /* HEADER */
     div#header-wrap {
         background-color: var(--dark-light);
-        /* border-top: solid 1px var(--red-very-light); */
         border-bottom: solid 1px var(--red-very-light);
-
     }
 
     div#header {
-        /* background-color: var(--dark-light); */
         max-width: 1200px;
         margin: 0 auto;
         box-shadow: none;
@@ -573,7 +570,7 @@ p {
     /* ABOUT */
     div#about-wrap {
         background-color: var(--dark-light);
-        height: 100vh;
+        /* height: 100vh; */
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -587,6 +584,8 @@ p {
         align-items: center;
         max-width: 1200px;
         margin: 0 auto;
+        /* height: 100%; */
+
     }
 
     div#about-img {
