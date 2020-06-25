@@ -537,7 +537,8 @@ p {
     div#banner-img {
         width: 100%;
         height: 100%;
-        background-image: url('/assets/img/img-banner-3.png');
+        /* background-image: url('../assets/img/img-banner-3.png'); */
+        background-image: url('../img/img-banner-3.PNG');
         background-attachment: fixed;
         background-position: right;
         background-size: contain;
