@@ -412,6 +412,10 @@ div#contact-social {
     margin: 10px 25px;
 }
 
+div#contact-social-2 {
+    display: none;
+}
+
 div.social-container {
     color: var(--light);
     display: flex;
@@ -675,10 +679,26 @@ p {
     }
 
     div#contact-social {
-        max-width: 750px;
-        margin: 0 auto;
-        margin-top: 20px;
         display: none;
+    }
+
+    #contact-form>form {
+        position: relative;
+    }
+
+    div#contact-social-2 {
+        display: flex;
+        position: absolute;
+        bottom: 10px;
+        right: -10px;
+    }
+
+    #contact-social-2>div {
+        margin-right: 10px;
+    }
+
+    #contact-form>form>button {
+        margin-top: 50px;
     }
 
     /* FOOTER */
