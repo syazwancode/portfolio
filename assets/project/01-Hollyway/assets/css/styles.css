@@ -1,0 +1,572 @@
+/* background-color: #42b3d6; */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Nunito', sans-serif;
+    scroll-behavior: smooth;
+}
+
+div#container {
+    /* width: 1200px; */
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+/* ####################### HEADER ####################### */
+div#header-wrap {
+    /* border: solid; */
+    width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+}
+
+nav {
+    margin: 0 0 0 50px;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+}
+
+.menu li {}
+
+.menu li a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    width: 80px;
+    text-decoration: none;
+    color: black;
+    padding: 0 10px;
+    box-sizing: border-box;
+    transition: color 0.3s,
+        background-color 0.3s;
+}
+
+.menu li a:hover {
+    background-color: #42b3d6;
+    color: #fff;
+}
+
+.menu li a.home {
+    background-color: #42b3d6;
+    color: #fff;
+}
+
+.search {
+    margin: 0 50px 0 0;
+}
+
+.search input {
+    height: 30px;
+    font-family: 'Nunito', sans-serif;
+    outline: none;
+    padding: 0 5px;
+    border: solid 0.5px #c0c0c0;
+}
+
+#search-button {
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+/* ################################# BANNER ####################### */
+div#banner-wrap {
+    /* border: solid; */
+    width: 100%;
+    /* margin: 0 auto; */
+    background-color: #edf7f8;
+}
+
+#banner {
+    /* background-color: #edf7f8; */
+    width: 1200px;
+    height: 700px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    /* border: solid; */
+    margin: 0 auto;
+}
+
+div#text {
+    margin-left: 50px;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+div#text h1 {
+    font-size: 70px;
+    padding-bottom: 10px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+}
+
+div#text h3 {
+    padding-bottom: 10px;
+    font-weight: 400;
+    font-size: 25px;
+}
+
+div#text p {
+    padding-bottom: 20px;
+}
+
+div.button {
+    background-color: #42b3d6;
+    color: #fff;
+    width: 120px;
+    height: 50px;
+    border: solid #42b3d6 0.5px;
+    border-radius: 5px;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+div.button:hover {
+    background-color: white;
+    color: #42b3d6;
+    border: solid #42b3d6 0.5px;
+    font-size: 14px;
+}
+
+div#image {
+    margin-right: 50px;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* border: solid; */
+}
+
+div#image img {
+    width: 500px;
+}
+
+
+/* ####################### SOCIAL ####################### */
+div#social-wrap {
+    /* border: solid; */
+    width: 1200px;
+    margin: 0 auto;
+}
+
+div#social {
+    padding: 0 0 0 50px;
+}
+
+div#social i {
+    margin: 20px 20px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* ####################### CATEGORY ####################### */
+div#category-wrap {
+    /* border: solid; */
+    width: 1200px;
+    margin: 0 auto;
+}
+
+div#category {
+    padding: 0 400px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 40px;
+}
+
+/* ####################### PRODUCT ####################### */
+div#product-wrap {
+    /* border: solid; */
+    width: 1200px;
+    margin: 0 auto;
+}
+
+div#product {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.card {
+    width: 350px;
+    height: 100%;
+    border: solid 0.5px #d1d1d1;
+    margin: 20px 10px;
+    border-radius: 5px;
+}
+
+#card-img {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+}
+
+.card div img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+#card-text {
+    padding: 10px 20px;
+}
+
+#card-text h3 {
+    font-weight: 400;
+}
+
+#card-text p {
+    font-weight: 400;
+    font-size: 14px;
+    padding: 10px 0 10px 0;
+}
+
+#card-text a {
+    font-weight: 400;
+    font-size: 14px;
+    text-decoration: none;
+    color: #0C7FFE;
+    padding-right: 10px;
+}
+
+#card-text p.last-update {
+    font-weight: 400;
+    font-size: 12px;
+    text-decoration: none;
+    color: #b9b9b9;
+}
+
+/* ####################### ACCOUNT ####################### */
+div#account {
+    width: 100%;
+    height: 1000px;
+    background-color: #edf7f8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+div#account-container {
+    width: 1125px;
+    height: 700px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+}
+
+div.account-content {
+    width: 50%;
+    height: 100%;
+}
+
+div#account-text {
+    background-color: #edf7f8;
+    padding: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+div#account-text img {
+    width: 200px;
+    margin-bottom: 25px;
+}
+
+div#account-text h3 {
+    font-weight: 600;
+    font-size: 22px;
+}
+
+div#account-text p {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+div.button2 {
+    background-color: white;
+    color: #42b3d6;
+    width: 110px;
+    height: 40px;
+    border: solid #42b3d6 0.5px;
+    border-radius: 5px;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+div.button2:hover {
+    background-color: #42b3d6;
+    color: #fff;
+    border: solid #42b3d6 0.5px;
+    font-size: 14px;
+}
+
+div#account-create {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 100px;
+}
+
+div#account-create>p {
+    color: #42b3d6;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+div#account-create form {
+    display: flex;
+    flex-direction: column;
+}
+
+div#account-create form input {
+    margin: 0 0 0 5px;
+    width: 310px;
+    height: 35px;
+    border: none;
+    outline: none;
+}
+
+form div#button-form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 20px 0 20px 0;
+}
+
+div#account-create form i {
+    border: solid 0.5px #42b3d6;
+    margin: 10px 0;
+    padding: 5px 0 5px 20px;
+}
+
+div#button-form button {
+    width: 110px;
+    height: 40px;
+    margin: 0 20px 0 0;
+    border: solid 0.5px #42b3d6;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #42b3d6;
+    cursor: pointer;
+}
+
+div#button-form button:hover {
+    border: solid 0.5px #42b3d6;
+    border-radius: 4px;
+    color: #42b3d6;
+    background-color: white;
+    cursor: pointer;
+}
+
+div#button-form span {
+    margin: 0 20px 0 0;
+    font-size: 12px;
+}
+
+div#button-form a {
+    text-decoration: none;
+    color: black;
+    font-size: 12px;
+}
+
+div#button-form a:hover {
+    text-decoration: underline;
+}
+
+span#alt {
+    margin: 20px 0 0 0;
+    font-size: 20px;
+}
+
+div#line {
+    width: 250px;
+    margin: 20px 0 0 0;
+    border-top: solid 0.5px #b9b9b9;
+}
+
+#google-account {
+    margin: 20px 0 0 0;
+
+}
+
+#google-account i {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/* ####################### CONTACT ####################### */
+div#contact-wrap {
+    /* border: solid; */
+    width: 1200px;
+    margin: 0 auto;
+}
+
+div#contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div#card-contact-container {
+    /* width: 10px; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    /* align-items: center; */
+}
+
+div.card-contact {
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    width: 325px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    padding: 20px 15px;
+    margin: 20px 20px;
+    position: relative;
+}
+
+div.circle {
+    width: 10px;
+    height: 10px;
+    background-color: #42b3d6;
+    border-radius: 50%;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+div.profile-img {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+div.profile-img img {
+    width: 100px;
+}
+
+div.contact-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.contact-icon>div {
+    margin: 0 10px;
+    width: 35px;
+    height: 35px;
+    border: solid 0.5px #42b3d6;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.contact-icon>div>i {
+    color: #42b3d6;
+}
+
+#card-contact-container>div>h3 {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+#card-contact-container>div>p {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+#card-contact-container>div>span {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+#contact>h3 {
+    text-align: center;
+    width: 500px;
+    font-size: 24px;
+    font-weight: 600;
+    margin: 60px 0 20px 0;
+}
+
+/* ####################### FOOTER ####################### */
+div#footer {
+    width: 100%;
+    /* height: 900px; */
+    display: flex;
+    justify-content: center;
+}
+
+div#footer-container {
+    border-top: solid 0.5px #b9b9b9;
+    /* width: 100%; */
+    width: 1200px;
+    margin-top: 80px;
+    margin-bottom: 100px;
+    padding-top: 80px;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-evenly; */
+}
+
+#footer-container>div:nth-child(1) {
+    margin-left: 80px;
+}
+
+#footer-container>div {
+    margin-right: 120px;
+}
+
+#footer-container>div>h1 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+#footer-container>div>h3 {
+    font-size: 16px;
+    font-weight: 400;
+}

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Update</title>
+
+    <style>
+        *> {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #container {
+            width: 800px;
+            height: 600px;
+            margin: 0 auto;
+            /* border: solid 1px black; */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            font-family: tahoma;
+        }
+
+        .card {
+            width: 320px;
+            height: 450px;
+            /* border: 0.5px solid gray; */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            margin: 10px 0;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            background-color: rgb(44, 44, 44);
+        }
+
+        h1,
+        div {
+            color: white;
+        }
+
+        button {
+            padding: 10px;
+        }
+
+        .temp {
+            font-size: 20px;
+        }
+
+        .maxtemp {
+            font-size: 14px;
+            color: rgb(175, 175, 175);
+        }
+
+        .icon {
+            background-color: white;
+            padding: 10px;
+            display: none;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div>
+            <button onclick="callApi(1735161)">KUALA LUMPUR</button>
+            <button onclick="callApi(1734634)">IPOH</button>
+            <button onclick="callApi(1732752)">JOHOR BAHRU</button>
+            <button onclick="callApi(1734599)">KUALA KANGSAR</button>
+            <button onclick="callApiGeo()">Current Location</button>
+        </div>
+
+        <div class="card">
+            <div>
+                <h1>
+                    Today's Weather
+                </h1>
+            </div>
+            <div id="geo" class="geolocation"></div>
+            <div id="icon" class="icon"></div>
+            <div id="temp" class="temp">Please click any location.</div>
+            <div id="tempfeel" class="tempfeel"></div>
+            <div id="maxtemp" class="maxtemp"></div>
+            <div id="name" class="city-name"></div>
+        </div>
+    </div>
+
+    <script>
+        var key = '19bdbba9befb79ca98caa4274bd0c25c'
+        var KELVIN = 273.15
+
+        var lat = ''
+        var long = ''
+
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+        }
+
+        function showPosition(position) {
+            console.log(position.coords.latitude, position.coords.longitude)
+            lat = position.coords.latitude
+            long = position.coords.longitude
+        }
+
+        function callApi(i) {
+            var api = `http://api.openweathermap.org/data/2.5/weather?id=${i}&appid=${key}`;
+
+            fetch(api).then(function (res) {
+                var data = res.json();
+                return data;
+            }).then(function (data) {
+                console.log(data)
+
+                var temp = data.main.temp - KELVIN
+                var tempfeel = data.main.feels_like - KELVIN
+                var tempMax = data.main.temp_max - KELVIN
+                var weather = data.weather[0].icon
+                var cityName = data.name
+
+                document.getElementById('icon').innerHTML = `<img src="./icons/${weather}.png" alt="">`
+                document.getElementById('temp').innerHTML = `${Math.floor(temp)}°C`
+                document.getElementById('tempfeel').innerHTML = `It feels like ${Math.floor(tempfeel)}°C`
+                document.getElementById('maxtemp').innerHTML = `Max Temp: ${Math.floor(tempMax)}°C`
+                document.getElementById('name').innerHTML = `${cityName}`
+
+                document.getElementById('icon').style.display = 'block'
+
+            })
+
+
+        }
+
+        function callApiGeo(i) {
+
+            getLocation();
+
+            var api = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${key}`
+
+            fetch(api).then(function (res) {
+                var data = res.json();
+                return data;
+            }).then(function (data) {
+                console.log(data)
+
+                var temp = data.main.temp - KELVIN
+                var tempfeel = data.main.feels_like - KELVIN
+                var tempMax = data.main.temp_max - KELVIN
+                var weather = data.weather[0].icon
+                var cityName = data.name
+
+                document.getElementById('icon').innerHTML = `<img src="./icons/${weather}.png" alt="">`
+                document.getElementById('temp').innerHTML = `${Math.floor(temp)}°C`
+                document.getElementById('tempfeel').innerHTML = `It feels like ${Math.floor(tempfeel)}°C`
+                document.getElementById('maxtemp').innerHTML = `Max Temp: ${Math.floor(tempMax)}°C`
+                document.getElementById('name').innerHTML = `${cityName}`
+
+                document.getElementById('icon').style.display = 'block'
+            })
+
+        }
+    </script>
+</body>
+
+</html>

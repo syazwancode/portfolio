@@ -620,13 +620,23 @@ p {
     }
 
     div#projects {
-        height: 100vh;
+        /* height: 100vh; */
+        height: auto;
         max-width: 1200px;
         margin: 0 auto;
     }
 
     div#projects-details {
         display: flex;
+        flex-direction: column;
+    }
+
+    div.projects-group {
+        display: flex;
+    }
+
+    div.prjc-img img {
+        width: 340px;
     }
 
     /* CONTACT */
@@ -649,6 +659,7 @@ p {
         max-width: 750px;
         margin: 0 auto;
         margin-top: 20px;
+        display: none;
     }
 
     /* FOOTER */
@@ -658,7 +669,7 @@ p {
     }
 
     div#footer {
-        max-width: 1200px;
+        max-width: 900px;
         margin: 0 auto;
         border: none;
     }
