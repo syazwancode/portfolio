@@ -70,7 +70,7 @@ div#header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    /* box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); */
+    box-shadow: 0 15px 100px rgba(0, 0, 0, 0.3);
     position: relative;
     /* position: fixed;
     width: 100vw; */
@@ -116,7 +116,8 @@ div#menu {
 div#banner {
     background-color: var(--dark);
     width: 100%;
-    height: calc(100vh - var(--header-height));
+    /* height: calc(100vh - var(--header-height)); */
+    height: 100vh;
     padding-top: var(--header-height);
 }
 
@@ -201,18 +202,23 @@ div#about-me p:nth-child(3) {
 
 .about-card {
     background-color: var(--dark);
-    margin: 20px 25px 0 25px;
+    margin: 5px 25px 0 25px;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    align-items: center;
+    padding: 7px;
 }
 
-.about-card p:nth-child(2) {
+.about-card .about-content p:nth-child(1) {
     color: var(--dark-light-light);
 }
 
-.about-card p:nth-child(3) {
+.about-card .about-content p:nth-child(2) {
     color: var(--light);
 }
 
-.about-card div {
+.about-card div.about-logo {
     background-color: var(--dark-light);
     width: 50px;
     height: 50px;
@@ -220,6 +226,7 @@ div#about-me p:nth-child(3) {
     line-height: 50px;
     color: var(--light);
     font-weight: 700;
+    margin-right: 10px;
 }
 
 /* SKILLS */
@@ -465,6 +472,7 @@ p {
         /* background-color: var(--dark-light); */
         max-width: 1200px;
         margin: 0 auto;
+        box-shadow: none;
     }
 
     div#menu-mobile {
@@ -527,8 +535,6 @@ p {
         display: block;
         width: 50%;
         height: 100%;
-
-
     }
 
     div#banner-img {
@@ -567,6 +573,11 @@ p {
     /* ABOUT */
     div#about-wrap {
         background-color: var(--dark-light);
+        height: 100vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
     }
 
     div#about {
@@ -586,6 +597,15 @@ p {
     div#about-text {
         width: 50%;
         height: 100%;
+    }
+
+    div#about-me>p.text2 {
+        font-size: 25px;
+        margin-bottom: 10px;
+    }
+
+    div#about-me>p.text3 {
+        font-size: 18px;
     }
 
     /* SKILLS */
