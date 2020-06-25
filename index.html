@@ -28,10 +28,18 @@
                         <a href="#projects">Projects</a>
                         <a href="#contact">Contact</a>
                     </div>
+                    <div id="menu-mobile-nav">
+                        <a href="#" onclick="closeMenu()">Home</a>
+                        <a href="#about-wrap" onclick="closeMenu()">About</a>
+                        <a href="#skills" onclick="closeMenu()">Skills</a>
+                        <a href="#projects" onclick="closeMenu()">Projects</a>
+                        <a href="#contact" onclick="closeMenu()">Contact</a>
+                        <div id="dummy"></div>
+                    </div>
                     <div id="chat-btn">
                         <a href="https://syazwancode.github.io/chatroom" target="_blanks">Let's Chat</a>
                     </div>
-                    <div id="menu-mobile">
+                    <div id="menu-mobile" onclick="showMenu()">
                         <i class="fa fa-bars"></i>
                     </div>
                 </div>
@@ -330,6 +338,8 @@
             </div>
         </div>
     </div>
+
+    <script src="./assets/js/main.js"></script>
 </body>
 
 </html>
