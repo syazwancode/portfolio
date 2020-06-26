@@ -548,6 +548,12 @@ p {
         width: 100%;
         max-width: 1200px;
         margin: 0 auto;
+
+        background-image: url('../img/img-banner-3.PNG');
+        background-attachment: fixed;
+        background-position: right;
+        background-size: contain;
+        background-repeat: no-repeat;
     }
 
     div#banner-outer-img {
@@ -563,7 +569,6 @@ p {
         background-attachment: fixed;
         background-position: right;
         background-size: contain;
-        /* background-size: cover; */
         background-repeat: no-repeat;
     }
 
