@@ -34,7 +34,7 @@ function colorSwitch() {
         document.documentElement.style.setProperty("--light", "#1a1a1d");
         document.documentElement.style.setProperty("--dark", "white");
         document.documentElement.style.setProperty("--dark-light", "#e3e3e3");
-        document.getElementById('banner-img').style.backgroundImage = "url('assets/img/img-banner-3-light.PNG')"
+        document.getElementById('banner-img').style.backgroundImage = "url('assets/img/batman.PNG')"
         color = 'light'
         window.scrollTo(0, 0)
         return false
