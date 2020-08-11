@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>What The Price!</title>
+    <style>
+      .result {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+      .card {
+        border: 1px black solid;
+        width: 300px;
+        padding: 10px;
+        margin: 10px;
+      }
+
+      .imageCard {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Search Item</h1>
+      <div>
+        <input id="search" type="text" />
+        <input type="button" value="Search" onclick="callApi()" />
+      </div>
+      <br />
+
+      <button onclick="logout()">Logout</button>
+      <br />
+      <br />
+
+      <div id="status"></div>
+      <br />
+      <br />
+
+      <h1 id="lazadatitle" style="display: none;">LAZADA</h1>
+      <div id="resultLazada" class="result"></div>
+
+      <h1 id="shopeetitle" style="display: none;">SHOPEE</h1>
+      <div id="resultShopee" class="result"></div>
+    </div>
+    <script>
+      function logout() {
+        window.location.href = "./index.html";
+      }
+
+      function callApi() {
+        let query = document.getElementById("search").value;
+
+        if (query === "") {
+          alert("Search box cannot be empty");
+        } else {
+          console.log("Initiate call..");
+
+          document.getElementById("status").innerHTML =
+            "Fetching API. Please Wait. DO NOT REFRESH!";
+
+          var api = `http://whattheprice.pythonanywhere.com/api/v1/data?q=${query}`;
+          console.log(api);
+
+          fetch(api)
+            .then(function (res) {
+              console.log("Stage 1");
+              var data = res.json();
+              console.log(data);
+              return data;
+            })
+            .then(function (data) {
+              console.log("Stage 2");
+              console.log(data);
+              console.log("Stage 3");
+              console.log(data.data);
+              document.getElementById("status").innerHTML = "Complete!";
+              document.getElementById("lazadatitle").style.display = "block";
+              document.getElementById("shopeetitle").style.display = "block";
+
+              data.data.forEach(myFunction);
+
+              function myFunction(item) {
+                document.getElementById(
+                  "resultLazada"
+                ).innerHTML += `<div class="card">
+                        <img class="imageCard" src="https://${item["image_url"]}">
+                        <br><br>
+                        <p>${item["name"]}</p>
+                        <br><br>
+                        <p>${item["price"]}</p>
+                        <br<br>
+                        <p>${item["brand"]}</p>
+                        <br<br>
+                        <a href="https://${item["url"]}" target="_blank">Buy Now!</a>
+                        <br><br>
+                        <input type="checkbox>
+                        <p>Track this item</p>
+                    </div>`;
+              }
+            })
+            .catch((error) =>
+              console.log("This is custom ERROR message: ", error)
+            );
+        }
+      }
+    </script>
+  </body>
+</html>
