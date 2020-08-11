@@ -558,7 +558,7 @@ p {
   div#banner-img {
     width: 100%;
     height: 100%;
-    background-image: url("../img/batman.PNG");
+    background-image: url("../img/batman.png");
     background-attachment: fixed;
     background-position: right;
     background-size: contain;
