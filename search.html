@@ -61,7 +61,7 @@
           document.getElementById("status").innerHTML =
             "Fetching API. Please Wait. DO NOT REFRESH!";
 
-          var api = `http://whattheprice.pythonanywhere.com/api/v1/data?q=${query}`;
+          var api = `https://whattheprice.pythonanywhere.com/api/v1/data?q=${query}`;
           console.log(api);
 
           fetch(api)
