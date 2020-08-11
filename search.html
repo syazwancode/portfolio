@@ -78,6 +78,8 @@
           console.log(api);
 
           document.getElementById("resultLazada").innerHTML = "";
+          document.getElementById("lazadatitle").style.display = "none";
+          document.getElementById("shopeetitle").style.display = "none";
 
           fetch(api)
             .then(function (res) {
@@ -89,32 +91,38 @@
             .then(function (data) {
               console.log("Stage 2");
               console.log(data);
-              console.log("Stage 3");
-              console.log(data.data);
-              document.getElementById("status").innerHTML = "Complete!";
-              document.getElementById("lazadatitle").style.display = "block";
-              document.getElementById("shopeetitle").style.display = "block";
-              document.getElementById("loader").style.display = "none";
+              if (data.status_code === "404") {
+                document.getElementById("status").innerHTML =
+                  "No result found.";
+                document.getElementById("loader").style.display = "none";
+              } else {
+                console.log("Stage 3");
+                console.log(data.data);
+                document.getElementById("status").innerHTML = "Complete!";
+                document.getElementById("lazadatitle").style.display = "block";
+                document.getElementById("shopeetitle").style.display = "block";
+                document.getElementById("loader").style.display = "none";
 
-              data.data.forEach(myFunction);
+                data.data.forEach(myFunction);
 
-              function myFunction(item) {
-                document.getElementById(
-                  "resultLazada"
-                ).innerHTML += `<div class="card">
-                        <img class="imageCard" src="https://${item["image_url"]}">
-                        <br><br>
-                        <p>${item["name"]}</p>
-                        <br><br>
-                        <p>${item["price"]}</p>
-                        <br<br>
-                        <p>${item["brand"]}</p>
-                        <br<br>
-                        <a href="https://${item["url"]}" target="_blank">Buy Now!</a>
-                        <br><br>
-                        <input type="checkbox>
-                        <p>Track this item</p>
-                    </div>`;
+                function myFunction(item) {
+                  document.getElementById(
+                    "resultLazada"
+                  ).innerHTML += `<div class="card">
+                              <img class="imageCard" src="https://${item["image_url"]}">
+                              <br><br>
+                              <p>${item["name"]}</p>
+                              <br><br>
+                              <p>${item["price"]}</p>
+                              <br<br>
+                              <p>${item["brand"]}</p>
+                              <br<br>
+                              <a href="https://${item["url"]}" target="_blank">Buy Now!</a>
+                              <br><br>
+                              <input type="checkbox>
+                              <p>Track this item</p>
+                          </div>`;
+                }
               }
             })
             .catch((error) => {
