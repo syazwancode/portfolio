@@ -31,10 +31,6 @@
       </div>
       <br />
 
-      <button onclick="logout()">Logout</button>
-      <br />
-      <br />
-
       <div id="status"></div>
       <br />
       <br />
@@ -46,10 +42,6 @@
       <div id="resultShopee" class="result"></div>
     </div>
     <script>
-      function logout() {
-        window.location.href = "./index.html";
-      }
-
       function callApi() {
         let query = document.getElementById("search").value;
 
@@ -63,6 +55,8 @@
 
           var api = `https://whattheprice.pythonanywhere.com/api/v1/data?q=${query}`;
           console.log(api);
+
+          document.getElementById("resultLazada").innerHTML = "";
 
           fetch(api)
             .then(function (res) {
@@ -102,8 +96,8 @@
               }
             })
             .catch((error) => {
-              console.log("This is custom ERROR message: ", error);
               document.getElementById("status").innerHTML = "ERROR!";
+              console.log("This is custom ERROR message: ", error);
             });
         }
       }
