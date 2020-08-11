@@ -101,9 +101,10 @@
                     </div>`;
               }
             })
-            .catch((error) =>
-              console.log("This is custom ERROR message: ", error)
-            );
+            .catch((error) => {
+              console.log("This is custom ERROR message: ", error);
+              document.getElementById("status").innerHTML = "ERROR!";
+            });
         }
       }
     </script>
