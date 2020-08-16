@@ -46,7 +46,8 @@
       <h1>Search Item</h1>
       <div>
         <input id="search" type="text" />
-        <input type="button" value="Search" onclick="callApi()" />
+        <input type="button" value="Search" onclick="callApi('ok')" />
+        <input type="button" value="Dummy Data" onclick="callApi('ko')" />
       </div>
       <br />
       <div id="status"></div>
@@ -61,7 +62,7 @@
       <div id="resultShopee" class="result"></div>
     </div>
     <script>
-      function callApi() {
+      function callApi(apiType) {
         let query = document.getElementById("search").value;
 
         if (query === "") {
@@ -74,7 +75,12 @@
 
           document.getElementById("loader").style.display = "block";
 
-          var api = `https://whattheprice.pythonanywhere.com/api/v1/data?q=${query}`;
+          if (apiType === "ok") {
+            var api = `https://api-sandbox-286406.et.r.appspot.com/api/v1/data?q=${query}&user_id=10`;
+          } else {
+            var api = `https://whattheprice.pythonanywhere.com/dummy/v1/data?q=${query}`;
+          }
+
           console.log(api);
 
           document.getElementById("resultLazada").innerHTML = "";
@@ -119,8 +125,8 @@
                               <br<br>
                               <a href="https://${item["url"]}" target="_blank">Buy Now!</a>
                               <br><br>
-                              <input type="checkbox>
                               <p>Track this item</p>
+                              <input type="checkbox" name="" id="">
                           </div>`;
                 }
               }
